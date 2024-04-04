@@ -54,7 +54,7 @@ jobs:
 
       - name: Set pull request status
         if: success()
-        uses: arun/create-pull-request-comment@v3
+        uses: bathiniarun/create-pull-request-comment@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: "Pull request auto-merged successfully!"
