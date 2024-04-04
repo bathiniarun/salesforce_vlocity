@@ -1,0 +1,19 @@
+name: Push to Remote
+
+on:
+  push:
+    branches:
+      - Feature1/*
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Push to Remote
+        run: |
+          git config --global user.email "bathiniarunkumar147@gmail.com"
+          git config --global user.name "bathiniarun"
+          git push origin HEAD:refs/heads/feature/${{ github.event.ref }}
