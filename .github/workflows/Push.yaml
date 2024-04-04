@@ -38,23 +38,3 @@ jobs:
             git push origin main
             exit 0
           fi
-
-      - name: Send email on merge conflict
-        if: failure()
-        uses: bathiniarun/action-send-mail@v2
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "Merge conflict detected in pull request #${{ github.event.pull_request.number }}"
-          body: "Merge conflict detected in pull request #${{ github.event.pull_request.number }}. Please resolve the conflicts and merge manually."
-          to: "bathiniarunkumar525@gmail.com"
-          tls: true
-
-      - name: Set pull request status
-        if: success()
-        uses: bathiniarun/create-pull-request-comment@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          body: "Pull request auto-merged successfully!"
