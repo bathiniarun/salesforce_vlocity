@@ -1,4 +1,5 @@
 #Pipeline1
+#Pipeline2
 name: Auto Merge Pull Request
 
 on:
