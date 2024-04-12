@@ -1,6 +1,7 @@
 #Pipeline1
 #Pipeline2
-#Pipeline
+#Pipeline3
+
 name: Auto Merge Pull Request
 
 on:
